@@ -1,0 +1,40 @@
+public class TamGiacCanFibonacci{
+
+    public static void main(String []args){
+        int n = 6;
+        int i, j;
+
+
+        for(i = 0; i <= n; i++)
+        {
+            // tạo khoảng trắng trong dòng
+            for(j = 0; j <= n-i; j++)
+            {
+                System.out.printf("  ");
+            }
+            for(j = 0; j <= i; j++)
+            {
+                System.out.printf("%4d", nrc(i,j));
+            }
+
+            // ngắt dòng
+            System.out.printf("\n");
+        }
+    }
+
+    // giai thừa
+    public static int factorial(int n) {
+        int f;
+
+        for (f = 1; n > 1; n--)
+            f = f * n;
+
+        return f;
+    }
+
+    // Tổ hợp
+    // C = n! / ( k! * (n-k)!))
+    public static int nrc(int n, int r) {
+        return factorial(n) / ( factorial(n-r) * factorial(r));
+    }
+}
